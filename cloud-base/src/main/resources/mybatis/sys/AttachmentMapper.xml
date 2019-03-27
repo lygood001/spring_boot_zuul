@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.AttachmentDao">
+
+
+	<select id="getAttachmentsByBizId" resultType="com.dms.bootapp.domain.sys.AttachmentDO" parameterType="com.dms.bootapp.domain.sys.AttachmentDO">
+		select `ID`,`V_FILE_TYPE`,`N_BIZ_ID`,`V_BIZ_TABLE`,`V_FILE_NAME_EXTE`,`V_FILE_URL`,
+		`V_FILE_NAME`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK`
+		from sys_attachment
+		where ID = #{nBizId} and V_BIZ_TABLE= #{vBizTable}
+		;
+	</select>
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.AttachmentDO" parameterType="java.lang.String">
+		select `ID`,`V_FILE_TYPE`,`N_BIZ_ID`,`V_BIZ_TABLE`,`V_FILE_NAME_EXTE`,`V_FILE_URL`,`V_FILE_NAME`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK` from sys_attachment limit ${page},${limits};
+	</select>
+	
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.AttachmentDO">
+		insert into sys_attachment
+		(
+			`ID`, 
+			`V_FILE_TYPE`, 
+			`N_BIZ_ID`, 
+			`V_BIZ_TABLE`, 
+			`V_FILE_NAME_EXTE`, 
+			`V_FILE_URL`, 
+			`V_FILE_NAME`, 
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`D_UPDATE`, 
+			`V_REMARK`
+		)
+		values
+		(
+			#{id}, 
+			#{vFileType}, 
+			#{nBizId}, 
+			#{vBizTable}, 
+			#{vFileNameExte}, 
+			#{vFileUrl}, 
+			#{vFileName}, 
+			#{nCreator}, 
+			#{dCreate}, 
+			#{dUpdate}, 
+			#{vRemark}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.AttachmentDO">
+		update sys_attachment 
+		<set>
+			<if test="vFileType != null">`V_FILE_TYPE` = #{vFileType}, </if>
+			<if test="nBizId != null">`N_BIZ_ID` = #{nBizId}, </if>
+			<if test="vBizTable != null">`V_BIZ_TABLE` = #{vBizTable}, </if>
+			<if test="vFileNameExte != null">`V_FILE_NAME_EXTE` = #{vFileNameExte}, </if>
+			<if test="vFileUrl != null">`V_FILE_URL` = #{vFileUrl}, </if>
+			<if test="vFileName != null">`V_FILE_NAME` = #{vFileName}, </if>
+			<if test="nCreator != null">`N_CREATOR` = #{nCreator}, </if>
+			<if test="dCreate != null">`D_CREATE` = #{dCreate}, </if>
+			<if test="dUpdate != null">`D_UPDATE` = #{dUpdate}, </if>
+			<if test="vRemark != null">`V_REMARK` = #{vRemark}</if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_attachment where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_attachment
+	</select>
+
+
+</mapper>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.ParamterDao">
+
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.ParamterDO" parameterType="java.lang.String">
+		select a.ID,a.V_PARA_CODE,a.V_PARA_NAME,a.V_SYS_MODEL,a.V_REMARK,a.N_CREATOR,a.D_CREATE,a.D_UPDATE,b.V_REAL_NAME as v_Creator_Name
+		from sys_paramter a
+		left join sys_user b ON  a.N_CREATOR = b.ID
+		limit ${page},${limits};
+	</select>
+	<select id="get" resultType="com.dms.bootapp.domain.sys.ParamterDO">
+        select a.ID,a.V_PARA_CODE,a.V_PARA_NAME,a.V_SYS_MODEL,a.V_REMARK,a.N_CREATOR,a.D_CREATE,a.D_UPDATE,b.V_REAL_NAME as v_Creator_Name
+        from sys_paramter a
+		left join sys_user b ON  a.N_CREATOR = b.ID
+        where a.id=#{value}
+    </select>
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.ParamterDO">
+		insert into sys_paramter
+		(
+			`V_PARA_CODE`, 
+			`V_PARA_NAME`, 
+			`V_SYS_MODEL`, 
+			`V_REMARK`, 
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`D_UPDATE`
+		)
+		values
+		(
+			#{vParaCode}, 
+			#{vParaName}, 
+			#{vSysModel}, 
+			#{vRemark}, 
+			#{nCreator}, 
+			now(),
+			now()
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.ParamterDO">
+		update sys_paramter 
+		<set>
+			<if test="vParaName != null">`V_PARA_NAME` = #{vParaName}, </if>
+			<if test="vSysModel != null">`V_SYS_MODEL` = #{vSysModel}, </if>
+			<if test="vRemark != null">`V_REMARK` = #{vRemark}, </if>
+			`D_UPDATE` = now(),
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_paramter where id = #{value}
+	</delete>
+	<select id="checkParamterCode" resultType="com.dms.bootapp.domain.sys.ParamterDO">
+        select * from sys_paramter where V_PARA_CODE=#{vParaCode}
+    </select>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_paramter
+	</select>
+
+
+</mapper>

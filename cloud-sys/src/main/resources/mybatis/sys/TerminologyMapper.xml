@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.TerminologyDao">
+
+
+	<select id="getTerminologyDOByID" resultType="com.dms.bootapp.domain.sys.TerminologyDO" parameterType="java.lang.Integer">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_MODULE`,d.v_desc vModuleDesc, a.`V_CH_FULL_NAME`,a.`V_EN_FULL_NAME`,
+		       u.V_REAL_NAME vCreatorName, a.`V_EXTENSION`,a.`V_EN_SHORT_NAME`,a.`V_CH_DESC`,a.`V_REMARK`,a.`V_SPELL_WORDS`
+		from sys_terminology a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_dict d on d.v_main_code = 'sys_model' and a.V_MODULE = d.v_code
+		where a.id = #{id}
+	</select>
+
+	<select id="getTerminologyListBySearchStr" resultType="com.dms.bootapp.domain.sys.TerminologyDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_MODULE`,d.v_desc vModuleDesc, a.`V_CH_FULL_NAME`,a.`V_EN_FULL_NAME`,
+		       u.V_REAL_NAME vCreatorName, a.`V_EXTENSION`,a.`V_EN_SHORT_NAME`,a.`V_CH_DESC`,a.`V_REMARK`,a.`V_SPELL_WORDS`
+		from sys_terminology a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_dict d on d.v_main_code = 'sys_model' and a.V_MODULE = d.v_code
+		where a.V_CH_FULL_NAME like #{v_search_str}
+		   or a.V_EN_FULL_NAME like #{v_search_str}
+		   or a.V_EN_SHORT_NAME like #{v_search_str}
+		   or a.V_CH_DESC like #{v_search_str}
+		   or a.V_SPELL_WORDS like #{v_search_str}
+		limit ${page},${limits};
+	</select>
+
+	<select id="countBySearchStr" resultType="java.lang.Integer">
+		select count(a.id)
+		from sys_terminology a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_dict d on d.v_main_code = 'sys_model' and a.V_MODULE = d.v_code
+		where a.V_CH_FULL_NAME like #{v_search_str}
+		   or a.V_EN_FULL_NAME like #{v_search_str}
+		   or a.V_EN_SHORT_NAME like #{v_search_str}
+		   or a.V_CH_DESC like #{v_search_str}
+		   or a.V_SPELL_WORDS like #{v_search_str}
+	</select>
+
+	<select id="getTerminologyListByFullName" resultType="com.dms.bootapp.domain.sys.TerminologyDO" parameterType="com.dms.bootapp.domain.sys.TerminologyDO">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_MODULE`,d.v_desc vModuleDesc, a.`V_CH_FULL_NAME`,a.`V_EN_FULL_NAME`,
+		       u.V_REAL_NAME vCreatorName, a.`V_EXTENSION`,a.`V_EN_SHORT_NAME`,a.`V_CH_DESC`,a.`V_REMARK`,a.`V_SPELL_WORDS`
+		from sys_terminology a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_dict d on d.v_main_code = 'sys_model' and a.V_MODULE = d.v_code
+		where a.V_CH_FULL_NAME like #{vChFullName}
+		   or a.V_EN_FULL_NAME like #{vEnFullName}
+	</select>
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.TerminologyDO" parameterType="java.lang.String">
+		select `ID`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_MODULE`,`V_CH_FULL_NAME`,`V_EN_FULL_NAME`,`V_EXTENSION`,`V_EN_SHORT_NAME`,`V_CH_DESC`,`V_REMARK`,`V_SPELL_WORDS`
+		from sys_terminology
+		limit ${page},${limits};
+	</select>
+	
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.TerminologyDO">
+		insert into sys_terminology
+		(
+			`ID`, 
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`D_UPDATE`, 
+			`V_MODULE`, 
+			`V_CH_FULL_NAME`, 
+			`V_EN_FULL_NAME`, 
+			`V_EXTENSION`, 
+			`V_EN_SHORT_NAME`, 
+			`V_CH_DESC`, 
+			`V_REMARK`, 
+			`V_SPELL_WORDS`
+		)
+		values
+		(
+			#{id}, 
+			#{nCreator}, 
+			now(),
+			#{dUpdate}, 
+			#{vModule}, 
+			#{vChFullName}, 
+			#{vEnFullName}, 
+			#{vExtension}, 
+			#{vEnShortName}, 
+			#{vChDesc}, 
+			#{vRemark}, 
+			#{vSpellWords}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.TerminologyDO">
+		update sys_terminology 
+		<set>
+			`D_UPDATE` = now(),
+			<if test="vModule != null">`V_MODULE` = #{vModule}, </if> 
+			<if test="vExtension != null">`V_EXTENSION` = #{vExtension}, </if>
+			<if test="vEnShortName != null">`V_EN_SHORT_NAME` = #{vEnShortName}, </if>
+			<if test="vEnFullName != null">`V_EN_FULL_NAME` = #{vEnFullName}, </if>
+			<if test="vChDesc != null">`V_CH_DESC` = #{vChDesc}, </if>
+			<if test="vChFullName != null">`V_CH_FULL_NAME` = #{vChFullName}, </if>
+			<if test="vRemark != null">`V_REMARK` = #{vRemark}, </if>
+			<if test="vSpellWords != null">`V_SPELL_WORDS` = #{vSpellWords}</if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_terminology where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_terminology
+	</select>
+
+
+</mapper>

@@ -1,0 +1,31 @@
+server:
+  port: 8000
+  uri-encoding: utf-8
+spring:
+  application:
+    name: spring-cloud-eureka
+  mail:
+    password: lampcvsufyhrgecj
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+    username: 1361377878@qq.com
+mail:
+  fromMail:
+    addr: 1361377878@qq.com
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    evictionIntervalTimerInMs: 400
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      #defaultZone: http://peer2:8007/eureka/,http://peer3:8008/eureka/
+      defaultZone: http://localhost:8000/eureka/

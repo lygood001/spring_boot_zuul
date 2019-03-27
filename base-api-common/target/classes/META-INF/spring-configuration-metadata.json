@@ -1,0 +1,87 @@
+{
+  "groups": [
+    {
+      "name": "bootapp",
+      "type": "com.dms.common.base.BootAppJsonBase",
+      "sourceType": "com.dms.common.base.BootAppJsonBase"
+    },
+    {
+      "name": "cors",
+      "type": "com.dms.common.config.CorsConfig",
+      "sourceType": "com.dms.common.config.CorsConfig"
+    },
+    {
+      "name": "ftp",
+      "type": "com.dms.common.utils.FtpFileUtils",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    }
+  ],
+  "properties": [
+    {
+      "name": "bootapp.app-name",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.base.BootAppJsonBase"
+    },
+    {
+      "name": "bootapp.app-version",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.base.BootAppJsonBase"
+    },
+    {
+      "name": "bootapp.company-code",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.base.BootAppJsonBase"
+    },
+    {
+      "name": "cors.allowed-header",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.config.CorsConfig"
+    },
+    {
+      "name": "cors.allowed-method",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.config.CorsConfig"
+    },
+    {
+      "name": "cors.allowed-origin",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.config.CorsConfig"
+    },
+    {
+      "name": "ftp.f-t-p-a-d-d-r-e-s-s",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    },
+    {
+      "name": "ftp.f-t-p-p-a-s-s-w-o-r-d",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    },
+    {
+      "name": "ftp.f-t-p-p-o-r-t",
+      "type": "java.lang.Integer",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    },
+    {
+      "name": "ftp.f-t-p-u-s-e-r-n-a-m-e",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    },
+    {
+      "name": "ftp.ftp-host",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    },
+    {
+      "name": "ftp.ftp-path",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    },
+    {
+      "name": "ftp.tomcat-post",
+      "type": "java.lang.String",
+      "sourceType": "com.dms.common.utils.FtpFileUtils"
+    }
+  ],
+  "hints": []
+}

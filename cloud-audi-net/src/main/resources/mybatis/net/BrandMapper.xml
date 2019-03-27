@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.net.BrandDao">
+
+
+	<select id="list" resultType="com.dms.bootapp.domain.net.BrandDO" parameterType="java.lang.String">
+		select a.ID,a.V_BRAND_CODE,a.V_BRAND_DESC,a.V_CSS_COLOR,a.N_CREATOR,a.D_CREATE,a.D_UPDATE,a.V_REMARK,a.N_SORT,b.V_REAL_NAME as v_Creator_Name from net_brand a
+		left join sys_user b ON  a.N_CREATOR = b.ID
+		limit ${page},${limits};
+	</select>
+	
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.net.BrandDO">
+		insert into net_brand
+		(
+			`V_BRAND_CODE`, 
+			`V_BRAND_DESC`, 
+			`V_CSS_COLOR`, 
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`D_UPDATE`, 
+			`V_REMARK`,
+			`N_SORT`
+		)
+		values
+		(
+			#{vBrandCode}, 
+			#{vBrandDesc}, 
+			#{vCssColor}, 
+			#{nCreator}, 
+			now(),
+			now(),
+			#{vRemark},
+			#{nSort}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.net.BrandDO">
+		update net_brand 
+		<set>
+			<if test="vBrandDesc != null">`V_BRAND_DESC` = #{vBrandDesc}, </if>
+			<if test="vCssColor != null">`V_CSS_COLOR` = #{vCssColor}, </if>
+			`D_UPDATE` = now(),
+			<if test="vRemark != null">`V_REMARK` = #{vRemark},</if>
+			<if test="nSort != null">`N_SORT` = #{nSort},</if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from net_brand where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from net_brand
+	</select>
+	<select id="get" resultType="com.dms.bootapp.domain.net.BrandDO">
+        select a.ID,a.V_BRAND_CODE,a.V_BRAND_DESC,a.V_CSS_COLOR,a.N_CREATOR,a.D_CREATE,a.D_UPDATE,a.V_REMARK,a.N_SORT,b.V_REAL_NAME as v_Creator_Name
+        from net_brand a
+		left join sys_user b ON  a.N_CREATOR = b.ID
+        where a.id=#{id}
+    </select>
+	<select id="checkBrandCode" resultType="com.dms.bootapp.domain.net.BrandDO">
+        select * from net_brand where V_BRAND_CODE=#{vBrandCode}
+    </select>
+
+	<select id="getAllBrandList" resultType="com.dms.bootapp.domain.net.BrandDO" parameterType="java.lang.String">
+		select a.ID,a.V_BRAND_CODE,a.V_BRAND_DESC,a.V_CSS_COLOR,a.N_CREATOR,a.D_CREATE,a.D_UPDATE,a.V_REMARK,a.N_SORT,b.V_REAL_NAME as v_Creator_Name from net_brand a
+		left join sys_user b ON  a.N_CREATOR = b.ID
+	</select>
+</mapper>

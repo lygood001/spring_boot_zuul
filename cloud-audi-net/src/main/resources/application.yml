@@ -1,0 +1,37 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,infoh,hystrix.streamm
+spring:
+  application:
+    name: spring-audi-net
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  mvc:
+    view:
+      suffix: .html
+  sleuth:
+    traceId128: true
+    sampler:
+      probability: 1.0
+    zipkin:
+      base-url: http://localhost:9411
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mybatis/**/*Mapper.xml
+  typeAliasesPackage: com.dms.bootapp.domain
+

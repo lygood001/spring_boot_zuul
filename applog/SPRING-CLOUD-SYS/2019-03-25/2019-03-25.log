@@ -1,0 +1,315 @@
+2019-03-25 15:56:06 -The following profiles are active: dev
+2019-03-25 15:56:15 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 15:56:17 -Finished Spring Data repository scanning in 2867ms. Found 0 repository interfaces.
+2019-03-25 15:56:18 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 15:56:18 -Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-03-25 15:56:18 -BeanFactory id=a8e6432b-5f47-30fc-be9e-f96771712135
+2019-03-25 15:56:19 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0d89179] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 15:56:19 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fcf29476] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 15:56:20 -Tomcat initialized with port(s): 8202 (http)
+2019-03-25 15:56:20 -Initializing ProtocolHandler ["http-nio-8202"]
+2019-03-25 15:56:20 -Starting service [Tomcat]
+2019-03-25 15:56:20 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 15:56:20 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 15:56:20 -Initializing Spring embedded WebApplicationContext
+2019-03-25 15:56:20 -Root WebApplicationContext: initialization completed in 13680 ms
+2019-03-25 15:56:20 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 15:56:20 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 15:56:20 -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3d920227
+2019-03-25 15:56:22 -Init DruidDataSource
+2019-03-25 15:56:22 -{dataSource-1} inited
+2019-03-25 15:56:26 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-25 15:56:27 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-25 15:56:27 -HHH000206: hibernate.properties not found
+2019-03-25 15:56:28 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-25 15:56:28 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-25 15:56:29 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-25 15:56:31 -ApplicationContextRegister--> setApplicationContextorg.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@736caf7a, started on Mon Mar 25 15:56:06 CST 2019, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@343570b7
+2019-03-25 15:56:31 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 15:56:31 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 15:56:32 -Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-25 15:56:32 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-25 15:56:34 -Exposing 1 endpoint(s) beneath base path '/actuator'
+2019-03-25 15:56:34 -Setting initial instance status as: STARTING
+2019-03-25 15:56:34 -Initializing Eureka in region us-east-1
+2019-03-25 15:56:35 -Using JSON encoding codec LegacyJacksonJson
+2019-03-25 15:56:35 -Using JSON decoding codec LegacyJacksonJson
+2019-03-25 15:56:35 -Using XML encoding codec XStreamXml
+2019-03-25 15:56:35 -Using XML decoding codec XStreamXml
+2019-03-25 15:56:36 -Resolving eureka endpoints via configuration
+2019-03-25 15:56:36 -Disable delta property : false
+2019-03-25 15:56:36 -Single vip registry refresh property : null
+2019-03-25 15:56:36 -Force full registry fetch : false
+2019-03-25 15:56:36 -Application is null : false
+2019-03-25 15:56:36 -Registered Applications size is zero : true
+2019-03-25 15:56:36 -Application version is -1: true
+2019-03-25 15:56:36 -Getting all instance registry info from the eureka server
+2019-03-25 15:56:36 -The response status is 200
+2019-03-25 15:56:36 -Starting heartbeat executor: renew interval is: 30
+2019-03-25 15:56:36 -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-03-25 15:56:36 -Discovery Client initialized at timestamp 1553500596705 with initial instances count: 1
+2019-03-25 15:56:36 -Registering application spring-cloud-sys with eureka with status UP
+2019-03-25 15:56:36 -Saw local status change event StatusChangeEvent [timestamp=1553500596761, current=UP, previous=STARTING]
+2019-03-25 15:56:36 -DiscoveryClient_SPRING-CLOUD-SYS/user-PC:spring-cloud-sys:8202: registering service...
+2019-03-25 15:56:36 -Starting ProtocolHandler ["http-nio-8202"]
+2019-03-25 15:56:36 -Using a shared selector for servlet write/read
+2019-03-25 15:56:36 -DiscoveryClient_SPRING-CLOUD-SYS/user-PC:spring-cloud-sys:8202 - registration status: 204
+2019-03-25 15:56:37 -Tomcat started on port(s): 8202 (http) with context path ''
+2019-03-25 15:56:37 -Started CloudSysApplication in 33.565 seconds (JVM running for 35.587)
+2019-03-25 15:56:37 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 15:56:37 -Initializing Servlet 'dispatcherServlet'
+2019-03-25 15:56:37 -Completed initialization in 73 ms
+2019-03-25 16:12:44 -The following profiles are active: dev
+2019-03-25 16:13:04 -Application run failed
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.lang.String.substring(String.java:1969)
+	at org.springframework.util.StringUtils.delimitedListToStringArray(StringUtils.java:1204)
+	at org.springframework.util.StringUtils.delimitedListToStringArray(StringUtils.java:1166)
+	at org.springframework.util.StringUtils.commaDelimitedListToStringArray(StringUtils.java:1222)
+	at org.springframework.core.io.support.SpringFactoriesLoader.loadSpringFactories(SpringFactoriesLoader.java:142)
+	at org.springframework.core.io.support.SpringFactoriesLoader.loadFactoryNames(SpringFactoriesLoader.java:122)
+	at org.springframework.core.io.support.SpringFactoriesLoader.loadFactories(SpringFactoriesLoader.java:98)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationImportFilters(AutoConfigurationImportSelector.java:290)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.filter(AutoConfigurationImportSelector.java:260)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:125)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector$AutoConfigurationGroup.process(AutoConfigurationImportSelector.java:420)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGrouping.getImports(ConfigurationClassParser.java:878)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:804)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:774)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:185)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:691)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.CloudSysApplication.main(CloudSysApplication.java:23)
+2019-03-25 16:13:25 -The following profiles are active: dev
+2019-03-25 16:13:33 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 16:13:48 -Finished Spring Data repository scanning in 14685ms. Found 0 repository interfaces.
+2019-03-25 16:13:48 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 16:13:48 -Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-03-25 16:13:49 -BeanFactory id=a8e6432b-5f47-30fc-be9e-f96771712135
+2019-03-25 16:13:49 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9ece9015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:13:50 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bae89312] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:13:59 -Tomcat initialized with port(s): 8202 (http)
+2019-03-25 16:14:00 -Initializing ProtocolHandler ["http-nio-8202"]
+2019-03-25 16:14:00 -Starting service [Tomcat]
+2019-03-25 16:14:00 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 16:14:00 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 16:14:05 -A child container failed during start
+java.util.concurrent.ExecutionException: java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:951)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:831)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1432)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1422)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:944)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:261)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:801)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:372)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:106)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:414)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.CloudSysApplication.main(CloudSysApplication.java:23)
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 16:14:05 -A child container failed during start
+java.util.concurrent.ExecutionException: org.apache.catalina.LifecycleException: A child container failed during start
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:951)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:261)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:801)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:372)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:106)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:414)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.CloudSysApplication.main(CloudSysApplication.java:23)
+Caused by: org.apache.catalina.LifecycleException: A child container failed during start
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:963)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:831)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1432)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1422)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:944)
+	... 21 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:951)
+	... 29 common frames omitted
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 16:14:05 -Pausing ProtocolHandler ["http-nio-8202"]
+2019-03-25 16:14:05 -Stopping service [Tomcat]
+2019-03-25 16:14:05 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2019-03-25 16:14:06 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-25 16:14:06 -Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.CloudSysApplication.main(CloudSysApplication.java:23)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:125)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:414)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 8 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: A child container failed during start
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:963)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:261)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:422)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:801)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:372)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:106)
+	... 13 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: org.apache.catalina.LifecycleException: A child container failed during start
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:951)
+	... 21 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: A child container failed during start
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:963)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:831)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1432)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1422)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:944)
+	... 21 common frames omitted
+Caused by: java.util.concurrent.ExecutionException: java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:951)
+	... 29 common frames omitted
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 16:14:28 -The following profiles are active: dev
+2019-03-25 16:14:37 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 16:14:40 -Finished Spring Data repository scanning in 3204ms. Found 0 repository interfaces.
+2019-03-25 16:14:40 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 16:14:40 -Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-03-25 16:14:41 -BeanFactory id=a8e6432b-5f47-30fc-be9e-f96771712135
+2019-03-25 16:14:41 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c0baf939] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:14:41 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$dcd4fc36] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:14:42 -Tomcat initialized with port(s): 8202 (http)
+2019-03-25 16:14:42 -Initializing ProtocolHandler ["http-nio-8202"]
+2019-03-25 16:14:42 -Starting service [Tomcat]
+2019-03-25 16:14:42 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 16:14:42 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 16:14:43 -Initializing Spring embedded WebApplicationContext
+2019-03-25 16:14:43 -Root WebApplicationContext: initialization completed in 14730 ms
+2019-03-25 16:14:43 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 16:14:43 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 16:14:43 -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@fff7dc9
+2019-03-25 16:14:44 -Init DruidDataSource
+2019-03-25 16:14:45 -{dataSource-1} inited
+2019-03-25 16:14:53 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-25 16:14:53 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-25 16:14:53 -HHH000206: hibernate.properties not found
+2019-03-25 16:14:53 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-25 16:14:54 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-25 16:14:54 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-25 16:14:57 -ApplicationContextRegister--> setApplicationContextorg.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2da59753, started on Mon Mar 25 16:14:28 CST 2019, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@65b3f4a4
+2019-03-25 16:14:57 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 16:14:57 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 16:14:58 -Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-25 16:14:58 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-25 16:15:15 -Exposing 1 endpoint(s) beneath base path '/actuator'
+2019-03-25 16:15:19 -Setting initial instance status as: STARTING
+2019-03-25 16:15:19 -Initializing Eureka in region us-east-1
+2019-03-25 16:15:20 -Using JSON encoding codec LegacyJacksonJson
+2019-03-25 16:15:20 -Using JSON decoding codec LegacyJacksonJson
+2019-03-25 16:15:20 -Using XML encoding codec XStreamXml
+2019-03-25 16:15:20 -Using XML decoding codec XStreamXml
+2019-03-25 16:15:21 -Resolving eureka endpoints via configuration
+2019-03-25 16:15:21 -Disable delta property : false
+2019-03-25 16:15:21 -Single vip registry refresh property : null
+2019-03-25 16:15:21 -Force full registry fetch : false
+2019-03-25 16:15:21 -Application is null : false
+2019-03-25 16:15:21 -Registered Applications size is zero : true
+2019-03-25 16:15:21 -Application version is -1: true
+2019-03-25 16:15:21 -Getting all instance registry info from the eureka server
+2019-03-25 16:15:21 -The response status is 200
+2019-03-25 16:15:21 -Starting heartbeat executor: renew interval is: 30
+2019-03-25 16:15:21 -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-03-25 16:15:21 -Discovery Client initialized at timestamp 1553501721847 with initial instances count: 1
+2019-03-25 16:15:21 -Registering application spring-cloud-sys with eureka with status UP
+2019-03-25 16:15:21 -Saw local status change event StatusChangeEvent [timestamp=1553501721884, current=UP, previous=STARTING]
+2019-03-25 16:15:21 -DiscoveryClient_SPRING-CLOUD-SYS/user-PC:spring-cloud-sys:8202: registering service...
+2019-03-25 16:15:21 -Starting ProtocolHandler ["http-nio-8202"]
+2019-03-25 16:15:21 -Using a shared selector for servlet write/read
+2019-03-25 16:15:21 -DiscoveryClient_SPRING-CLOUD-SYS/user-PC:spring-cloud-sys:8202 - registration status: 204
+2019-03-25 16:15:21 -Tomcat started on port(s): 8202 (http) with context path ''
+2019-03-25 16:15:21 -Started CloudSysApplication in 57.65 seconds (JVM running for 59.545)
+2019-03-25 16:15:22 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 16:15:22 -Initializing Servlet 'dispatcherServlet'
+2019-03-25 16:15:22 -Completed initialization in 34 ms
+2019-03-25 16:20:21 -Resolving eureka endpoints via configuration
+2019-03-25 16:25:21 -Resolving eureka endpoints via configuration
+2019-03-25 16:28:44 -Flipping property: localhost.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-03-25 16:28:44 -Shutdown hook installed for: NFLoadBalancer-PingTimer-localhost
+2019-03-25 16:28:44 -Client: localhost instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=localhost,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-03-25 16:28:44 -Using serverListUpdater PollingServerListUpdater
+2019-03-25 16:28:44 -DynamicServerListLoadBalancer for client localhost initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=localhost,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@7f78e7a8
+2019-03-25 16:30:21 -Resolving eureka endpoints via configuration
+2019-03-25 16:35:21 -Resolving eureka endpoints via configuration

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.DictDao">
+
+    <select id="getDictItemsByCode" resultType="com.dms.bootapp.domain.sys.DictDO" parameterType="java.lang.String">
+	    select a.ID,a.V_MAIN_CODE,a.V_MAIN_NAME,a.V_CODE,a.V_DESC,a.N_SORT,a.V_STOP_FLAG,a.D_STOP,b.V_REAL_NAME as v_Creator_Name,a.D_CREATE,a.D_UPDATE,a.V_REMARK
+		from sys_dict a left join sys_user b ON  a.N_CREATOR = b.ID
+		where a.V_MAIN_CODE like #{v_dict_code} or a.V_MAIN_NAME like #{v_dict_code}
+		or a.V_CODE like #{v_dict_code} or a.V_DESC like #{v_dict_code}
+		limit ${page},${limit};
+	</select>
+
+    <select id="checkSameDictItem" resultType="com.dms.bootapp.domain.sys.DictDO" parameterType="java.lang.String">
+	    select a.ID,a.V_MAIN_CODE,a.V_MAIN_NAME,a.V_CODE,a.V_DESC,a.N_SORT,a.V_STOP_FLAG,a.D_STOP,a.D_CREATE,a.D_UPDATE,a.V_REMARK
+		from sys_dict a
+		where a.V_MAIN_CODE = #{vMainCode} and a.V_CODE = #{vCode}
+	</select>
+
+    <select id="list" resultType="com.dms.bootapp.domain.sys.DictDO" parameterType="java.lang.String">
+		select a.ID,a.V_MAIN_CODE,a.V_MAIN_NAME,a.V_CODE,a.V_DESC,a.N_SORT,a.V_STOP_FLAG,a.D_STOP,b.V_REAL_NAME as v_Creator_Name,a.D_CREATE,a.D_UPDATE,a.V_REMARK
+		from sys_dict a left join sys_user b ON  a.N_CREATOR = b.ID
+		order by a.D_CREATE desc
+		limit ${page},${limits};
+	</select>
+
+    <select id="getDictDetailById" resultType="com.dms.bootapp.domain.sys.DictDO" parameterType="java.lang.String">
+		select a.ID,a.V_MAIN_CODE,a.V_MAIN_NAME,a.V_CODE,a.V_DESC,a.N_SORT,a.V_STOP_FLAG,a.D_STOP,b.V_REAL_NAME as v_Creator_Name,a.D_CREATE,a.D_UPDATE,a.V_REMARK
+		from sys_dict a left join sys_user b ON  a.N_CREATOR = b.ID
+		where a.id=#{id}
+	</select>
+
+    <insert id="save" parameterType="com.dms.bootapp.domain.sys.DictDO">
+        insert into sys_dict
+        (
+        `ID`,
+        `V_MAIN_CODE`,
+        `V_MAIN_NAME`,
+        `V_CODE`,
+        `V_DESC`,
+        `N_SORT`,
+        `V_STOP_FLAG`,
+        `D_STOP`,
+        `N_CREATOR`,
+        `D_CREATE`,
+        `D_UPDATE`,
+        `V_REMARK`
+        )
+        values
+        (
+        #{id},
+        #{vMainCode},
+        #{vMainName},
+        #{vCode},
+        #{vDesc},
+        #{nSort},
+        #{vStopFlag},
+        <choose>
+            <when test="vStopFlag == 1">
+                now(),
+            </when>
+            <otherwise>
+                null,
+            </otherwise>
+        </choose>
+        #{nCreator},
+        now(),
+        #{dUpdate},
+        #{vRemark}
+        )
+
+    </insert>
+
+    <update id="update" parameterType="com.dms.bootapp.domain.sys.DictDO">
+        update sys_dict
+        <set>
+            <if test="vDesc != null">`V_DESC` = #{vDesc},</if>
+            <if test="nSort != null">`N_SORT` = #{nSort},</if>
+            <if test="vStopFlag != null">`V_STOP_FLAG` = #{vStopFlag},</if>
+            <choose>
+                <when test="vStopFlag == 1">
+                      `D_STOP` = now(),
+                </when>
+                <otherwise>
+                      `D_STOP` = null,
+                </otherwise>
+            </choose>
+            `D_UPDATE` = now(),
+            <if test="vRemark != null">`V_REMARK` = #{vRemark}</if>
+        </set>
+        where ID = #{id}
+    </update>
+
+
+    <delete id="remove">
+		delete from sys_dict where id = #{value}
+	</delete>
+
+    <select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_dict
+	</select>
+
+    <select id="countByDictCode" resultType="java.lang.Integer">
+		select count(*) from sys_dict a
+		left join sys_user b ON  a.N_CREATOR = b.ID
+		where a.V_MAIN_CODE like #{v_dict_code}
+		   or a.V_MAIN_NAME like #{v_dict_code}
+		   or a.V_CODE like #{v_dict_code}
+		   or a.V_DESC like #{v_dict_code}
+		order by a.N_SORT
+
+	</select>
+
+    <delete id="deleteCheckedItem" parameterType="java.util.List">
+		delete from sys_dict where id  in
+        (
+        <foreach collection="list" item="item" index="index" separator=",">
+            #{item.id}
+        </foreach>
+        )
+	</delete>
+
+    <select id="getDictItemForList" resultType="com.dms.bootapp.domain.sys.DictDO">
+	    select a.ID,a.V_MAIN_CODE,a.V_MAIN_NAME,a.V_CODE,a.V_DESC,a.N_SORT,a.V_STOP_FLAG,a.D_STOP,a.D_CREATE,a.D_UPDATE,a.V_REMARK
+		from sys_dict a
+		where a.V_MAIN_CODE = #{value}
+	</select>
+</mapper>

@@ -1,0 +1,19 @@
+bootapp:
+  appName: DMS Boot APP Common API
+  appVersion: 1.0.1
+  companyCode: QM_DMS
+logging:
+  level:
+    root: info
+    com.dms.bootapp.dao: debug
+cors:
+  allowedOrigin: *
+  allowedHeader: *
+  allowedMethod: *
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    view:
+      suffix: .html

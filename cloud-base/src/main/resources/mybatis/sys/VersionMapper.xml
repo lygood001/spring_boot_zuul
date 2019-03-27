@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.VersionDao">
+
+	<select id="getByType" resultType="com.dms.bootapp.domain.sys.VersionDO">
+		select `ID`,`V_OS_TYPE`,`V_VERSION`,`V_APP_NAME`,`V_APK_URL`,`V_IN_STORE`,`V_REMARK`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`
+		from app_version
+        where V_OS_TYPE = #{value}
+	</select>
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.VersionDO">
+		select `ID`,`V_OS_TYPE`,`V_VERSION`,`V_APP_NAME`,`V_APK_URL`,`V_IN_STORE`,`V_REMARK`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`
+		from app_version
+        limit ${page},${limits};
+	</select>
+
+	<!-- 执行存储过程2-->
+	<!-- 入参定义：使用parameterMap进行参数映射，这时候存储过程参数占位符为：? -->
+	<!-- 注意：调用存储过程的两个大括号和中间的内容不要换行！可能会出问题的。正确姿势：{CALL xxx(?,?...)} -->
+	<parameterMap type="java.util.Map" id="exeP_APP_GetVersion_param">
+		<parameter property="p_1" mode="IN" jdbcType="INTEGER" />
+		<parameter property="p_2" mode="IN" jdbcType="VARCHAR" />
+		<parameter property="prm_code" mode="OUT" jdbcType="VARCHAR" />
+		<parameter property="prm_message" mode="OUT" jdbcType="VARCHAR" />
+	</parameterMap>
+	<select id="exeP_APP_GetVersion" statementType="CALLABLE" parameterMap="exeP_APP_GetVersion_param" resultType="com.dms.bootapp.domain.sys.VersionDO">
+	{CALL P_APP_GetVersion(?,?,?,?)}
+	</select>
+
+
+	<delete id="remove">
+		delete from app_version  where id = #{value}
+	</delete>
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.VersionDO">
+		insert into app_version
+		(
+			`ID`,
+			`V_OS_TYPE`,
+			`V_VERSION`,
+			`V_APP_NAME`,
+			`V_APK_URL`,
+			`V_IN_STORE`,
+			`V_REMARK`,
+			`N_CREATOR`,
+			`D_CREATE`,
+			`D_UPDATE`
+		)
+		values
+		(
+			#{id},
+			#{vOsType},
+			#{vVersion},
+			#{vAppName},
+			#{vApkUrl},
+			#{vInStore},
+			#{vRemark},
+			#{nCreator},
+            now(),
+            now()
+		)
+	</insert>
+	<select id="get" resultType="com.dms.bootapp.domain.sys.VersionDO">
+        select * from app_version where id=#{id}
+    </select>
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.VersionDO">
+		update app_version
+		<set>
+			D_UPDATE = now(),
+			<if test="vVersion != null">`V_VERSION` = #{vVersion}, </if>
+			<if test="vAppName != null">`V_APP_NAME` = #{vAppName}, </if>
+			<if test="vApkUrl != null">`V_APK_URL` = #{vApkUrl}, </if>
+			<if test="vInStore != null">`V_IN_STORE` = #{vInStore}, </if>
+		</set>
+		where ID = #{id}
+	</update>
+
+</mapper>

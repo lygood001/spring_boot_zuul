@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="base-api-common" />
+        <module name="bootapp" />
+        <module name="cloud-audi-net" />
+        <module name="cloud-base" />
+        <module name="cloud-service" />
+        <module name="cloud-sys" />
+        <module name="cloud-zuul" />
+        <module name="clouod-config" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-config" target="1.8" />
+      <module name="cloud-config-service" target="1.8" />
+      <module name="cloud-web" target="1.8" />
+      <module name="clouod-config" target="1.5" />
+      <module name="demo" target="1.8" />
+      <module name="service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="base-api-common" options="-parameters" />
+      <module name="bootapp" options="-parameters" />
+      <module name="cloud-audi-net" options="-parameters" />
+      <module name="cloud-base" options="-parameters" />
+      <module name="cloud-config" options="-parameters" />
+      <module name="cloud-config-service" options="-parameters" />
+      <module name="cloud-service" options="-parameters" />
+      <module name="cloud-sys" options="-parameters" />
+      <module name="cloud-web" options="-parameters" />
+      <module name="cloud-zuul" options="-parameters" />
+      <module name="clouod-config" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="service" options="-parameters" />
+    </option>
+  </component>
+</project>

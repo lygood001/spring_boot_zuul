@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.CityDao">
+
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.CityDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_PRO_CODE`,a.`V_CITY_CODE`,a.`V_CITY_NAME`,
+	        	a.`V_CITY_FIXER`,u.V_REAL_NAME vCreatorName,b.V_PRO_NAME
+		from sys_city  a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_province b on a.V_PRO_CODE = b.V_PRO_CODE
+		limit ${page},${limits};
+	</select>
+
+	<select id="cityListByProvince" resultType="com.dms.bootapp.domain.sys.CityDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_PRO_CODE`,a.`V_CITY_CODE`,a.`V_CITY_NAME`,
+	        	a.`V_CITY_FIXER`,u.V_REAL_NAME vCreatorName,b.V_PRO_NAME
+		from sys_city  a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_province b on a.V_PRO_CODE = b.V_PRO_CODE
+		where a.V_PRO_CODE like #{vProCode}
+		limit ${page},${limits};
+	</select>
+
+	<select id="getCityDetail" resultType="com.dms.bootapp.domain.sys.CityDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_PRO_CODE`,a.`V_CITY_CODE`,a.`V_CITY_NAME`,
+	        	a.`V_CITY_FIXER`,u.V_REAL_NAME vCreatorName,b.V_PRO_NAME
+		from sys_city  a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_province b on a.V_PRO_CODE = b.V_PRO_CODE
+	    where a.id = #{value}
+	</select>
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.CityDO">
+		insert into sys_city
+		(
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`V_PRO_CODE`,
+			`V_CITY_CODE`,
+			`V_CITY_NAME`,
+			`V_CITY_FIXER`
+		)
+		values
+		(
+			#{nCreator}, 
+			now(),
+			#{vProCode},
+			#{vCityCode},
+			#{vCityName},
+			#{vCityFixer}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.CityDO">
+		update sys_city 
+		<set>
+			D_UPDATE = now(),
+			<if test="nCreator != null">`N_CREATOR` = #{nCreator}, </if>
+			<if test="dCreate != null">`D_CREATE` = #{dCreate}, </if>
+			<if test="dUpdate != null">`D_UPDATE` = #{dUpdate}, </if>
+			<if test="vProCode != null">`V_PRO_CODE` = #{vProCode}, </if>
+			<if test="vCityCode != null">`V_CITY_CODE` = #{vCityCode}, </if>
+			<if test="vCityName != null">`V_CITY_NAME` = #{vCityName}, </if>
+			<if test="vCityFixer != null">`V_CITY_FIXER` = #{vCityFixer}</if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_city where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_city
+	</select>
+
+	<select id="countBypro" resultType="java.lang.Integer" parameterType="java.lang.String">
+		select count(a.id)
+		from sys_city  a
+		left join sys_province b on a.V_PRO_CODE = b.V_PRO_CODE
+		where a.V_PRO_CODE like #{vProCode}
+	</select>
+
+	<select id="getCityListByProCode" resultType="com.dms.bootapp.domain.sys.CityDO" parameterType="java.lang.String">
+		select a.*
+		from sys_city  a
+		where a.V_PRO_CODE = #{proCode}
+	</select>
+
+	<select id="countByProCode" resultType="java.lang.Integer">
+		select count(*) from sys_city where V_PRO_CODE = #{proCode}
+	</select>
+
+	<select id="cityListOrderBy" resultType="com.dms.bootapp.domain.sys.CityDO">
+		select * from sys_city order by V_CITY_FIXER
+	</select>
+
+
+</mapper>

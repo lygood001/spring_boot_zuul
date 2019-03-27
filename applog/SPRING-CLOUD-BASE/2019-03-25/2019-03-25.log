@@ -1,0 +1,792 @@
+2019-03-25 15:52:26 -The following profiles are active: dev
+2019-03-25 15:52:30 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.CloudBaseApplication]; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 15:52:30 -Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.CloudBaseApplication]; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:691)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.CloudBaseApplication.main(CloudBaseApplication.java:14)
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.Arrays.copyOfRange(Arrays.java:3664)
+	at java.lang.String.<init>(String.java:207)
+	at java.lang.String.substring(String.java:1969)
+	at sun.net.www.protocol.jar.Handler.parseURL(Handler.java:157)
+	at java.net.URL.<init>(URL.java:622)
+	at java.net.URL.<init>(URL.java:490)
+	at org.springframework.core.io.UrlResource.createRelative(UrlResource.java:241)
+	at org.springframework.core.io.support.PathMatchingResourcePatternResolver.doFindPathMatchingJarResources(PathMatchingResourcePatternResolver.java:653)
+	at org.springframework.core.io.support.PathMatchingResourcePatternResolver.findPathMatchingResources(PathMatchingResourcePatternResolver.java:509)
+	at org.springframework.core.io.support.PathMatchingResourcePatternResolver.getResources(PathMatchingResourcePatternResolver.java:284)
+	at org.springframework.context.support.AbstractApplicationContext.getResources(AbstractApplicationContext.java:1315)
+	at org.springframework.context.support.GenericApplicationContext.getResources(GenericApplicationContext.java:235)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:421)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:316)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:275)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:691)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:528)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+2019-03-25 15:53:13 -The following profiles are active: dev
+2019-03-25 15:53:21 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 15:53:30 -Finished Spring Data repository scanning in 8850ms. Found 0 repository interfaces.
+2019-03-25 15:53:30 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 15:53:31 -BeanFactory id=2bf23af6-e304-35ca-8981-595cf84fd992
+2019-03-25 15:53:31 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71a1624d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 15:53:32 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8dbb654a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 15:53:34 -Tomcat initialized with port(s): 8201 (http)
+2019-03-25 15:53:34 -Initializing ProtocolHandler ["http-nio-8201"]
+2019-03-25 15:53:35 -Starting service [Tomcat]
+2019-03-25 15:53:35 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 15:53:35 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 15:53:36 -Initializing Spring embedded WebApplicationContext
+2019-03-25 15:53:36 -Root WebApplicationContext: initialization completed in 23500 ms
+2019-03-25 15:53:38 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 15:53:38 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 15:53:38 -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3fb732ee
+2019-03-25 15:53:42 -{dataSource-1} inited
+2019-03-25 15:53:52 -Filter webStatFilter was not registered (possibly already registered?)
+2019-03-25 15:53:52 -Servlet statViewServlet was not registered (possibly already registered?)
+2019-03-25 15:54:08 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 15:54:08 -{dataSource-1} closed
+2019-03-25 15:54:08 -Stopping service [Tomcat]
+2019-03-25 15:54:08 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-25 15:54:08 -Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.CloudBaseApplication.main(CloudBaseApplication.java:14)
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.Arrays.copyOfRange(Arrays.java:3664)
+	at java.lang.String.<init>(String.java:207)
+	at java.lang.StringBuilder.toString(StringBuilder.java:407)
+	at org.springframework.util.StringUtils.cleanPath(StringUtils.java:695)
+	at org.springframework.core.io.UrlResource.getCleanedUrl(UrlResource.java:148)
+	at org.springframework.core.io.UrlResource.<init>(UrlResource.java:82)
+	at org.springframework.core.io.UrlResource.createRelative(UrlResource.java:241)
+	at org.springframework.core.io.support.PathMatchingResourcePatternResolver.doFindPathMatchingJarResources(PathMatchingResourcePatternResolver.java:653)
+	at org.springframework.core.io.support.PathMatchingResourcePatternResolver.findPathMatchingResources(PathMatchingResourcePatternResolver.java:509)
+	at org.springframework.core.io.support.PathMatchingResourcePatternResolver.getResources(PathMatchingResourcePatternResolver.java:284)
+	at org.springframework.context.support.AbstractApplicationContext.getResources(AbstractApplicationContext.java:1315)
+	at org.springframework.context.support.GenericApplicationContext.getResources(GenericApplicationContext.java:235)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.scanPackage(DefaultPersistenceUnitManager.java:584)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.buildDefaultPersistenceUnitInfo(DefaultPersistenceUnitManager.java:541)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.readPersistenceUnitInfos(DefaultPersistenceUnitManager.java:522)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.preparePersistenceUnitInfos(DefaultPersistenceUnitManager.java:459)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.afterPropertiesSet(DefaultPersistenceUnitManager.java:443)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:328)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$137/212890971.getObject(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+2019-03-25 15:54:52 -The following profiles are active: dev
+2019-03-25 15:54:58 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 15:55:01 -Finished Spring Data repository scanning in 2749ms. Found 0 repository interfaces.
+2019-03-25 15:55:01 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 15:55:01 -BeanFactory id=2bf23af6-e304-35ca-8981-595cf84fd992
+2019-03-25 15:55:01 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4253cf2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 15:55:01 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$203f3fef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 15:55:02 -Tomcat initialized with port(s): 8201 (http)
+2019-03-25 15:55:02 -Initializing ProtocolHandler ["http-nio-8201"]
+2019-03-25 15:55:02 -Starting service [Tomcat]
+2019-03-25 15:55:02 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 15:55:02 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 15:55:03 -Initializing Spring embedded WebApplicationContext
+2019-03-25 15:55:03 -Root WebApplicationContext: initialization completed in 10511 ms
+2019-03-25 15:55:03 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 15:55:03 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 15:55:03 -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@345b558f
+2019-03-25 15:55:03 -{dataSource-1} inited
+2019-03-25 15:55:05 -Filter webStatFilter was not registered (possibly already registered?)
+2019-03-25 15:55:05 -Servlet statViewServlet was not registered (possibly already registered?)
+2019-03-25 15:55:07 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-25 15:55:07 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-25 15:55:07 -HHH000206: hibernate.properties not found
+2019-03-25 15:55:08 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-25 15:55:08 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-25 15:55:08 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-25 15:55:09 -Autowired annotation should only be used on methods with parameters: public java.lang.String com.dms.bootapp.controller.sys.AttachmentConfigLevel1Controller.getAttachmentConfigLevel1List()
+2019-03-25 15:55:09 -==>  Preparing: select `ID`,`V_CLASS_TYPE`,`V_CLASS_NAME`,`V_CLASS_FILE_PATH`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK` from sys_attachment_config_level1 
+2019-03-25 15:55:09 -==> Parameters: 
+2019-03-25 15:55:09 -<==      Total: 4
+2019-03-25 15:55:09 -==>  Preparing: select count(*) from sys_attachment_config_level1 
+2019-03-25 15:55:09 -==> Parameters: 
+2019-03-25 15:55:09 -<==      Total: 1
+2019-03-25 15:55:10 -ApplicationContextRegister--> setApplicationContextorg.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b1d6571, started on Mon Mar 25 15:54:52 CST 2019, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@291caca8
+2019-03-25 15:55:10 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 15:55:10 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 15:55:10 -Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-25 15:55:10 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-25 15:55:12 -Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-03-25 15:55:12 -Setting initial instance status as: STARTING
+2019-03-25 15:55:12 -Initializing Eureka in region us-east-1
+2019-03-25 15:55:13 -Using JSON encoding codec LegacyJacksonJson
+2019-03-25 15:55:13 -Using JSON decoding codec LegacyJacksonJson
+2019-03-25 15:55:13 -Using XML encoding codec XStreamXml
+2019-03-25 15:55:13 -Using XML decoding codec XStreamXml
+2019-03-25 15:55:13 -Resolving eureka endpoints via configuration
+2019-03-25 15:55:14 -Disable delta property : false
+2019-03-25 15:55:14 -Single vip registry refresh property : null
+2019-03-25 15:55:14 -Force full registry fetch : false
+2019-03-25 15:55:14 -Application is null : false
+2019-03-25 15:55:14 -Registered Applications size is zero : true
+2019-03-25 15:55:14 -Application version is -1: true
+2019-03-25 15:55:14 -Getting all instance registry info from the eureka server
+2019-03-25 15:55:14 -The response status is 200
+2019-03-25 15:55:14 -Starting heartbeat executor: renew interval is: 30
+2019-03-25 15:55:14 -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-03-25 15:55:14 -Discovery Client initialized at timestamp 1553500514725 with initial instances count: 0
+2019-03-25 15:55:14 -Registering application spring-cloud-base with eureka with status UP
+2019-03-25 15:55:14 -Saw local status change event StatusChangeEvent [timestamp=1553500514739, current=UP, previous=STARTING]
+2019-03-25 15:55:14 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201: registering service...
+2019-03-25 15:55:14 -Starting ProtocolHandler ["http-nio-8201"]
+2019-03-25 15:55:14 -Using a shared selector for servlet write/read
+2019-03-25 15:55:14 -Tomcat started on port(s): 8201 (http) with context path ''
+2019-03-25 15:55:14 -Started CloudBaseApplication in 25.279 seconds (JVM running for 27.105)
+2019-03-25 15:55:14 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - registration status: 204
+2019-03-25 15:55:15 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 15:55:15 -Initializing Servlet 'dispatcherServlet'
+2019-03-25 15:55:15 -Completed initialization in 22 ms
+2019-03-25 15:55:44 -Disable delta property : false
+2019-03-25 15:55:44 -Single vip registry refresh property : null
+2019-03-25 15:55:44 -Force full registry fetch : false
+2019-03-25 15:55:44 -Application is null : false
+2019-03-25 15:55:44 -Registered Applications size is zero : true
+2019-03-25 15:55:44 -Application version is -1: false
+2019-03-25 15:55:44 -Getting all instance registry info from the eureka server
+2019-03-25 15:55:44 -The response status is 200
+2019-03-25 16:09:27 -The following profiles are active: dev
+2019-03-25 16:09:35 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 16:09:46 -Finished Spring Data repository scanning in 11012ms. Found 0 repository interfaces.
+2019-03-25 16:09:46 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 16:09:47 -BeanFactory id=2bf23af6-e304-35ca-8981-595cf84fd992
+2019-03-25 16:09:47 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dc29dfd0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:09:47 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f843e2cd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:09:50 -Tomcat initialized with port(s): 8201 (http)
+2019-03-25 16:09:50 -Initializing ProtocolHandler ["http-nio-8201"]
+2019-03-25 16:09:50 -Starting service [Tomcat]
+2019-03-25 16:09:50 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 16:09:51 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 16:09:59 -Initializing Spring embedded WebApplicationContext
+2019-03-25 16:09:59 -Root WebApplicationContext: initialization completed in 31968 ms
+2019-03-25 16:10:03 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 16:10:03 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 16:10:04 -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2331ac37
+2019-03-25 16:10:16 -{dataSource-1} inited
+2019-03-25 16:10:20 -Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unexpected exception during bean creation; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 16:10:21 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 16:10:22 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-25 16:10:22 -Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.CloudBaseApplication.main(CloudBaseApplication.java:14)
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+2019-03-25 16:10:46 -The following profiles are active: dev
+2019-03-25 16:10:52 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 16:10:55 -Finished Spring Data repository scanning in 3077ms. Found 0 repository interfaces.
+2019-03-25 16:10:55 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 16:10:56 -BeanFactory id=2bf23af6-e304-35ca-8981-595cf84fd992
+2019-03-25 16:10:56 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bbe9b49f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:10:56 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d803b79c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:10:57 -Tomcat initialized with port(s): 8201 (http)
+2019-03-25 16:10:57 -Initializing ProtocolHandler ["http-nio-8201"]
+2019-03-25 16:10:57 -Starting service [Tomcat]
+2019-03-25 16:10:57 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 16:10:57 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 16:10:57 -Initializing Spring embedded WebApplicationContext
+2019-03-25 16:10:57 -Root WebApplicationContext: initialization completed in 11059 ms
+2019-03-25 16:10:57 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 16:10:57 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 16:10:57 -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6840f38e
+2019-03-25 16:10:58 -{dataSource-1} inited
+2019-03-25 16:10:59 -Filter webStatFilter was not registered (possibly already registered?)
+2019-03-25 16:10:59 -Servlet statViewServlet was not registered (possibly already registered?)
+2019-03-25 16:11:01 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-25 16:11:01 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-25 16:11:01 -HHH000206: hibernate.properties not found
+2019-03-25 16:11:02 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-25 16:11:02 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-25 16:11:02 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-25 16:11:03 -Autowired annotation should only be used on methods with parameters: public java.lang.String com.dms.bootapp.controller.sys.AttachmentConfigLevel1Controller.getAttachmentConfigLevel1List()
+2019-03-25 16:11:03 -==>  Preparing: select `ID`,`V_CLASS_TYPE`,`V_CLASS_NAME`,`V_CLASS_FILE_PATH`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK` from sys_attachment_config_level1 
+2019-03-25 16:11:03 -==> Parameters: 
+2019-03-25 16:11:03 -<==      Total: 4
+2019-03-25 16:11:03 -==>  Preparing: select count(*) from sys_attachment_config_level1 
+2019-03-25 16:11:03 -==> Parameters: 
+2019-03-25 16:11:03 -<==      Total: 1
+2019-03-25 16:11:04 -ApplicationContextRegister--> setApplicationContextorg.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@253d9f73, started on Mon Mar 25 16:10:46 CST 2019, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ff29830
+2019-03-25 16:11:04 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 16:11:04 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 16:11:04 -Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-25 16:11:04 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-25 16:11:06 -Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-03-25 16:11:06 -Setting initial instance status as: STARTING
+2019-03-25 16:11:06 -Initializing Eureka in region us-east-1
+2019-03-25 16:11:07 -Using JSON encoding codec LegacyJacksonJson
+2019-03-25 16:11:07 -Using JSON decoding codec LegacyJacksonJson
+2019-03-25 16:11:07 -Using XML encoding codec XStreamXml
+2019-03-25 16:11:07 -Using XML decoding codec XStreamXml
+2019-03-25 16:11:07 -Resolving eureka endpoints via configuration
+2019-03-25 16:11:07 -Disable delta property : false
+2019-03-25 16:11:07 -Single vip registry refresh property : null
+2019-03-25 16:11:07 -Force full registry fetch : false
+2019-03-25 16:11:07 -Application is null : false
+2019-03-25 16:11:07 -Registered Applications size is zero : true
+2019-03-25 16:11:07 -Application version is -1: true
+2019-03-25 16:11:07 -Getting all instance registry info from the eureka server
+2019-03-25 16:11:08 -The response status is 200
+2019-03-25 16:11:08 -Starting heartbeat executor: renew interval is: 30
+2019-03-25 16:11:08 -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-03-25 16:11:08 -Discovery Client initialized at timestamp 1553501468186 with initial instances count: 0
+2019-03-25 16:11:08 -Registering application spring-cloud-base with eureka with status UP
+2019-03-25 16:11:08 -Saw local status change event StatusChangeEvent [timestamp=1553501468200, current=UP, previous=STARTING]
+2019-03-25 16:11:08 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201: registering service...
+2019-03-25 16:11:08 -Starting ProtocolHandler ["http-nio-8201"]
+2019-03-25 16:11:08 -Using a shared selector for servlet write/read
+2019-03-25 16:11:08 -Tomcat started on port(s): 8201 (http) with context path ''
+2019-03-25 16:11:08 -Started CloudBaseApplication in 25.095 seconds (JVM running for 26.997)
+2019-03-25 16:11:08 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - registration status: 204
+2019-03-25 16:11:08 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 16:11:08 -Initializing Servlet 'dispatcherServlet'
+2019-03-25 16:11:08 -Completed initialization in 21 ms
+2019-03-25 16:11:38 -Disable delta property : false
+2019-03-25 16:11:38 -Single vip registry refresh property : null
+2019-03-25 16:11:38 -Force full registry fetch : false
+2019-03-25 16:11:38 -Application is null : false
+2019-03-25 16:11:38 -Registered Applications size is zero : true
+2019-03-25 16:11:38 -Application version is -1: false
+2019-03-25 16:11:38 -Getting all instance registry info from the eureka server
+2019-03-25 16:11:40 -Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1399)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 26 common frames omitted
+2019-03-25 16:11:40 -Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplications(AbstractJerseyEurekaHttpClient.java:165)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1051)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:965)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1440)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 29 common frames omitted
+2019-03-25 16:11:40 -Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-03-25 16:11:40 -Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-03-25 16:11:42 -Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1399)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 27 common frames omitted
+2019-03-25 16:11:42 -Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-03-25 16:11:42 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1399)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-03-25 16:11:42 -Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplications(AbstractJerseyEurekaHttpClient.java:165)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1051)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:965)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1440)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 30 common frames omitted
+2019-03-25 16:11:42 -Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-03-25 16:11:42 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1051)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:965)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1440)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-03-25 16:12:12 -Disable delta property : false
+2019-03-25 16:12:12 -Single vip registry refresh property : null
+2019-03-25 16:12:12 -Force full registry fetch : false
+2019-03-25 16:12:12 -Application is null : false
+2019-03-25 16:12:12 -Registered Applications size is zero : true
+2019-03-25 16:12:12 -Application version is -1: false
+2019-03-25 16:12:12 -Getting all instance registry info from the eureka server
+2019-03-25 16:12:14 -Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplications(AbstractJerseyEurekaHttpClient.java:165)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1051)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:965)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1440)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 30 common frames omitted
+2019-03-25 16:12:14 -Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-03-25 16:12:14 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - was unable to refresh its cache! status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1051)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:965)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1473)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1440)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-03-25 16:12:14 -Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:102)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1399)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 27 common frames omitted
+2019-03-25 16:12:14 -Request execution failed with message: java.net.ConnectException: Connection refused: connect
+2019-03-25 16:12:14 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:846)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1399)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-03-25 16:12:44 -Disable delta property : false
+2019-03-25 16:12:44 -Single vip registry refresh property : null
+2019-03-25 16:12:44 -Force full registry fetch : false
+2019-03-25 16:12:44 -Application is null : false
+2019-03-25 16:12:44 -Registered Applications size is zero : true
+2019-03-25 16:12:44 -Application version is -1: false
+2019-03-25 16:12:44 -Getting all instance registry info from the eureka server
+2019-03-25 16:12:46 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - Re-registering apps/SPRING-CLOUD-BASE
+2019-03-25 16:12:46 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201: registering service...
+2019-03-25 16:12:46 -The response status is 200
+2019-03-25 16:12:47 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - registration status: 204
+2019-03-25 16:13:16 -Disable delta property : false
+2019-03-25 16:13:16 -Single vip registry refresh property : null
+2019-03-25 16:13:16 -Force full registry fetch : false
+2019-03-25 16:13:16 -Application is null : false
+2019-03-25 16:13:16 -Registered Applications size is zero : true
+2019-03-25 16:13:16 -Application version is -1: false
+2019-03-25 16:13:16 -Getting all instance registry info from the eureka server
+2019-03-25 16:13:16 -The response status is 200
+2019-03-25 16:16:07 -Resolving eureka endpoints via configuration
+2019-03-25 16:20:13 -The following profiles are active: dev
+2019-03-25 16:20:20 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-25 16:20:23 -Finished Spring Data repository scanning in 2902ms. Found 0 repository interfaces.
+2019-03-25 16:20:23 -Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-03-25 16:20:23 -BeanFactory id=2bf23af6-e304-35ca-8981-595cf84fd992
+2019-03-25 16:20:24 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$31ee879] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:20:24 -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1f38eb76] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-25 16:20:24 -Tomcat initialized with port(s): 8201 (http)
+2019-03-25 16:20:24 -Initializing ProtocolHandler ["http-nio-8201"]
+2019-03-25 16:20:24 -Starting service [Tomcat]
+2019-03-25 16:20:24 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-03-25 16:20:24 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_201\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\app\user\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Services\IPT\;D:\Java\jdk1.8.0_201\bin;D:\Java\jdk1.8.0_201\jre\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Users\user\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\VisualSVN\bin;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\Autodesk\Backburner\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\mysql-8.0.13-winx64\bin;C:\Program Files\dotnet\;E:\Program Files\Git\cmd;C:\Users\user\.dotnet\tools;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;D:\Program Files\Docker Toolbox;.]
+2019-03-25 16:20:25 -Initializing Spring embedded WebApplicationContext
+2019-03-25 16:20:25 -Root WebApplicationContext: initialization completed in 11332 ms
+2019-03-25 16:20:25 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 16:20:25 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 16:20:25 -DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3d947adf
+2019-03-25 16:20:25 -{dataSource-1} inited
+2019-03-25 16:20:27 -Filter webStatFilter was not registered (possibly already registered?)
+2019-03-25 16:20:27 -Servlet statViewServlet was not registered (possibly already registered?)
+2019-03-25 16:20:29 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-25 16:20:29 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-25 16:20:29 -HHH000206: hibernate.properties not found
+2019-03-25 16:20:29 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-25 16:20:29 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-25 16:20:29 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-25 16:20:30 -Autowired annotation should only be used on methods with parameters: public java.lang.String com.dms.bootapp.controller.sys.AttachmentConfigLevel1Controller.getAttachmentConfigLevel1List()
+2019-03-25 16:20:30 -==>  Preparing: select `ID`,`V_CLASS_TYPE`,`V_CLASS_NAME`,`V_CLASS_FILE_PATH`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK` from sys_attachment_config_level1 
+2019-03-25 16:20:30 -==> Parameters: 
+2019-03-25 16:20:30 -<==      Total: 4
+2019-03-25 16:20:30 -==>  Preparing: select count(*) from sys_attachment_config_level1 
+2019-03-25 16:20:30 -==> Parameters: 
+2019-03-25 16:20:30 -<==      Total: 1
+2019-03-25 16:20:30 -ApplicationContextRegister--> setApplicationContextorg.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@45fd9a4d, started on Mon Mar 25 16:20:13 CST 2019, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1018bde2
+2019-03-25 16:20:30 -No URLs will be polled as dynamic configuration sources.
+2019-03-25 16:20:30 -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-03-25 16:20:31 -Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-25 16:20:31 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-25 16:20:33 -Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-03-25 16:20:33 -Setting initial instance status as: STARTING
+2019-03-25 16:20:33 -Initializing Eureka in region us-east-1
+2019-03-25 16:20:34 -Using JSON encoding codec LegacyJacksonJson
+2019-03-25 16:20:34 -Using JSON decoding codec LegacyJacksonJson
+2019-03-25 16:20:34 -Using XML encoding codec XStreamXml
+2019-03-25 16:20:34 -Using XML decoding codec XStreamXml
+2019-03-25 16:20:34 -Resolving eureka endpoints via configuration
+2019-03-25 16:20:34 -Disable delta property : false
+2019-03-25 16:20:34 -Single vip registry refresh property : null
+2019-03-25 16:20:34 -Force full registry fetch : false
+2019-03-25 16:20:34 -Application is null : false
+2019-03-25 16:20:34 -Registered Applications size is zero : true
+2019-03-25 16:20:34 -Application version is -1: true
+2019-03-25 16:20:34 -Getting all instance registry info from the eureka server
+2019-03-25 16:20:34 -The response status is 200
+2019-03-25 16:20:34 -Starting heartbeat executor: renew interval is: 30
+2019-03-25 16:20:34 -InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-03-25 16:20:35 -Discovery Client initialized at timestamp 1553502035002 with initial instances count: 3
+2019-03-25 16:20:35 -Registering application spring-cloud-base with eureka with status UP
+2019-03-25 16:20:35 -Saw local status change event StatusChangeEvent [timestamp=1553502035016, current=UP, previous=STARTING]
+2019-03-25 16:20:35 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201: registering service...
+2019-03-25 16:20:35 -Starting ProtocolHandler ["http-nio-8201"]
+2019-03-25 16:20:35 -Using a shared selector for servlet write/read
+2019-03-25 16:20:35 -DiscoveryClient_SPRING-CLOUD-BASE/user-PC:spring-cloud-base:8201 - registration status: 204
+2019-03-25 16:20:35 -Tomcat started on port(s): 8201 (http) with context path ''
+2019-03-25 16:20:35 -Started CloudBaseApplication in 25.211 seconds (JVM running for 27.49)
+2019-03-25 16:20:35 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 16:20:35 -Initializing Servlet 'dispatcherServlet'
+2019-03-25 16:20:35 -Completed initialization in 32 ms
+2019-03-25 16:25:34 -Resolving eureka endpoints via configuration
+2019-03-25 16:30:34 -Resolving eureka endpoints via configuration
+2019-03-25 16:35:34 -Resolving eureka endpoints via configuration

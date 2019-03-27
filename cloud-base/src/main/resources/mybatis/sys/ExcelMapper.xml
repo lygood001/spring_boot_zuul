@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.ExcelDao">
+
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.ExcelDO" parameterType="java.lang.String">
+		select `ID`,`V_EXCEL_CODE`,`V_EXCEL_NAME`,`V_EXCEL_TABLE`,`V_PROC`,`V_STOP_FLAG`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK` from sys_excel limit ${page},${limits};
+	</select>
+	
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.ExcelDO" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+		insert into sys_excel
+		(
+			`V_EXCEL_CODE`, 
+			`V_EXCEL_NAME`, 
+			`V_EXCEL_TABLE`, 
+			`V_PROC`,
+			`V_STOP_FLAG`,
+			`N_CREATOR`,
+			`D_CREATE`,
+			`D_UPDATE`
+		)
+		values
+		(
+			#{vExcelCode}, 
+			#{vExcelName}, 
+			#{vExcelTable}, 
+			#{vProc},
+			'N',
+			#{nCreator},
+			#{dCreate},
+			#{dUpdate}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.ExcelDO">
+		update sys_excel 
+		<set>
+			<if test="vExcelCode != null">`V_EXCEL_CODE` = #{vExcelCode}, </if>
+			<if test="vExcelName != null">`V_EXCEL_NAME` = #{vExcelName}, </if>
+			<if test="vExcelTable != null">`V_EXCEL_TABLE` = #{vExcelTable}, </if>
+			<if test="vProc != null">`V_PROC` = #{vProc}, </if>
+			<if test="vTemplateUrl != null">`V_TEMPLATE_URL` = #{vTemplateUrl}, </if>
+			<if test="vStopFlag != null">`V_STOP_FLAG` = #{vStopFlag}, </if>
+			<if test="nCreator != null">`N_CREATOR` = #{nCreator}, </if>
+			<if test="dCreate != null">`D_CREATE` = #{dCreate}, </if>
+			<if test="dUpdate != null">`D_UPDATE` = #{dUpdate}, </if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_excel where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_excel
+	</select>
+
+
+	<select id="get" resultType="com.dms.bootapp.domain.sys.ExcelDO" parameterType="java.lang.String">
+	select 	`ID`,`V_EXCEL_CODE`,`V_EXCEL_NAME`,`V_EXCEL_TABLE`,`V_PROC`,`V_TEMPLATE_URL`,`V_STOP_FLAG`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK` from sys_excel where id=#{id}
+	</select>
+
+
+</mapper>

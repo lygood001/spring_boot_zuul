@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.AttachmentConfigLevel1Dao">
+
+	<select id="getAttachmentConfigLevel1List" resultType="com.dms.bootapp.domain.sys.AttachmentConfigLevel1DO" parameterType="java.lang.String">
+		select `ID`,`V_CLASS_TYPE`,`V_CLASS_NAME`,`V_CLASS_FILE_PATH`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK`
+		from sys_attachment_config_level1
+	</select>
+
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.AttachmentConfigLevel1DO" parameterType="java.lang.String">
+		select `ID`,`V_CLASS_TYPE`,`V_CLASS_NAME`,`V_CLASS_FILE_PATH`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_REMARK` from sys_attachment_config_level1 limit ${page},${limits};
+	</select>
+
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.AttachmentConfigLevel1DO">
+		insert into sys_attachment_config_level1
+		(
+			`ID`,
+			`V_CLASS_TYPE`,
+			`V_CLASS_NAME`,
+			`V_CLASS_FILE_PATH`,
+			`N_CREATOR`,
+			`D_CREATE`,
+			`D_UPDATE`,
+			`V_REMARK`
+		)
+		values
+		(
+			#{id},
+			#{vClassType},
+			#{vClassName},
+			#{vClassFilePath},
+			#{nCreator},
+			#{dCreate},
+			#{dUpdate},
+			#{vRemark}
+		)
+	</insert>
+
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.AttachmentConfigLevel1DO">
+		update sys_attachment_config_level1
+		<set>
+			<if test="vClassType != null">`V_CLASS_TYPE` = #{vClassType}, </if>
+			<if test="vClassName != null">`V_CLASS_NAME` = #{vClassName}, </if>
+			<if test="vClassFilePath != null">`V_CLASS_FILE_PATH` = #{vClassFilePath}, </if>
+			<if test="nCreator != null">`N_CREATOR` = #{nCreator}, </if>
+			<if test="dCreate != null">`D_CREATE` = #{dCreate}, </if>
+			<if test="dUpdate != null">`D_UPDATE` = #{dUpdate}, </if>
+			<if test="vRemark != null">`V_REMARK` = #{vRemark}</if>
+		</set>
+		where ID = #{id}
+	</update>
+
+	<delete id="remove">
+		delete from sys_attachment_config_level1 where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_attachment_config_level1
+	</select>
+
+
+</mapper>

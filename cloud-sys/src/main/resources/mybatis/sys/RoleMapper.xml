@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.RoleDao">
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.RoleDO" parameterType="java.lang.String">
+		select a.ID, a.V_CODE,a.V_DESC,a.V_STOP_FLAG,a.N_STOP,a.D_STOP,a.N_CREATOR,a.D_CREATE,a.D_UPDATE,b.V_REAL_NAME as v_Creator_Name
+		from sys_role a left join sys_user b ON  a.N_CREATOR = b.ID  limit ${page},${limits};
+	</select>
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.RoleDO">
+		insert into sys_role
+		(
+			`ID`, 
+			`V_CODE`, 
+			`V_DESC`, 
+			`V_STOP_FLAG`, 
+			`N_STOP`, 
+			`D_STOP`, 
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`D_UPDATE`
+		)
+		values
+		(
+			#{id}, 
+			#{vCode}, 
+			#{vDesc}, 
+			#{vStopFlag},
+			#{nStop},
+			<choose>
+				<when  test="vStopFlag == 1">
+					now(),
+				</when>
+				<otherwise>
+					null,
+				</otherwise>
+			</choose>
+
+			#{nCreator},
+			now(),
+			#{dUpdate}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.RoleDO">
+		update sys_role 
+		<set>
+			<if test="vCode != null">`V_CODE` = #{vCode}, </if>
+			<if test="vDesc != null">`V_DESC` = #{vDesc}, </if>
+			<if test="vStopFlag != null">`V_STOP_FLAG` = #{vStopFlag}, </if>
+			<if test="nStop != null">`N_STOP` = #{nStop}, </if>
+			<choose>
+				<when  test="vStopFlag == 1">
+					`D_STOP` = now(),
+				</when>
+				<otherwise>
+					`D_STOP` = null,
+				</otherwise>
+			</choose>
+			<if test="dUpdate != null">`D_UPDATE` = now()</if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_role where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_role
+	</select>
+	<select id="get" resultType="com.dms.bootapp.domain.sys.RoleDO">
+		select * from sys_role where id = #{value}
+	</select>
+
+	<select id="getCountByCode" resultType="java.lang.Integer" >
+		select count(*) from sys_role where V_CODE = #{value}
+	</select>
+    <select id="getCreaterName" resultType="java.lang.String" >
+		select b.v_real_name FROM sys_role a LEFT JOIN sys_user b ON a.N_CREATOR = b.ID WHERE a.ID = #{value}
+	</select>
+</mapper>

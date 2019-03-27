@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.ProvinceDao">
+
+	<select id="getAllProvinceList" resultType="com.dms.bootapp.domain.sys.ProvinceDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_AREA_CODE`,a.`V_PRO_CODE`,
+			a.`V_PRO_NAME`,a.`V_PRO_FIXER`,u.V_REAL_NAME vCreatorName, b.V_NAME vAreaDesc
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+	</select>
+
+	<select id="getAllProvinceListByAreaCode" resultType="com.dms.bootapp.domain.sys.ProvinceDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_AREA_CODE`,a.`V_PRO_CODE`,
+			a.`V_PRO_NAME`,a.`V_PRO_FIXER`,u.V_REAL_NAME vCreatorName, b.V_NAME vAreaDesc
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+		where a.V_AREA_CODE = #{value}
+	</select>
+
+	<select id="getProvinceByCodeOrName" resultType="com.dms.bootapp.domain.sys.ProvinceDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_AREA_CODE`,a.`V_PRO_CODE`,
+			a.`V_PRO_NAME`,a.`V_PRO_FIXER`,u.V_REAL_NAME vCreatorName, b.V_NAME vAreaDesc
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+		where a.V_PRO_CODE like #{searchStr}
+		   or a.V_PRO_NAME like #{searchStr}
+		limit ${page},${limits};
+	</select>
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.ProvinceDO" parameterType="java.lang.String">
+		select `ID`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_AREA_CODE`,`V_PRO_CODE`,`V_PRO_NAME`,`V_PRO_FIXER`
+		from sys_province limit ${page},${limits};
+	</select>
+	
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.ProvinceDO">
+		insert into sys_province
+		(
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`D_UPDATE`, 
+			`V_AREA_CODE`, 
+			`V_PRO_CODE`, 
+			`V_PRO_NAME`, 
+			`V_PRO_FIXER`
+		)
+		values
+		(
+			#{nCreator}, 
+			now(),
+			now(),
+			#{vAreaCode}, 
+			#{vProCode}, 
+			#{vProName}, 
+			#{vProFixer}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.ProvinceDO">
+		update sys_province
+		<set>
+			D_UPDATE = now(),
+			<if test="vAreaCode != null">`V_AREA_CODE` = #{vAreaCode}, </if>
+			<if test="vProName != null">`V_PRO_NAME` = #{vProName}, </if>
+			<if test="vProFixer != null">`V_PRO_FIXER` = #{vProFixer}</if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_province where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_province
+	</select>
+
+	<select id="countBySearchStr" resultType="java.lang.Integer">
+		select count(a.id)
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+		where a.V_PRO_CODE like #{searchStr}
+		   or a.V_PRO_NAME like #{searchStr}
+	</select>
+
+	<select id="getProvinceListCode" resultType="com.dms.bootapp.domain.sys.ProvinceDO">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_AREA_CODE`,a.`V_PRO_CODE`,
+			a.`V_PRO_NAME`,a.`V_PRO_FIXER`,u.V_REAL_NAME vCreatorName, b.V_NAME vAreaDesc
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+		where a.V_PRO_CODE = #{value}
+	</select>
+
+	<select id="getProListByAreaCode" resultType="com.dms.bootapp.domain.sys.ProvinceDO" parameterType="java.lang.String">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_AREA_CODE`,a.`V_PRO_CODE`,
+			a.`V_PRO_NAME`,a.`V_PRO_FIXER`,u.V_REAL_NAME vCreatorName, b.V_NAME vAreaDesc
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+		where a.V_AREA_CODE = #{areaCode}
+	</select>
+
+	<select id="countByAreaCode" resultType="java.lang.Integer">
+		select count(a.`ID`)
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+		where V_AREA_CODE = #{areaCode}
+	</select>
+
+	<select id="getProvinceByCode" resultType="com.dms.bootapp.domain.sys.ProvinceDO">
+		select a.`ID`,a.`N_CREATOR`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_AREA_CODE`,a.`V_PRO_CODE`,
+			a.`V_PRO_NAME`,a.`V_PRO_FIXER`,u.V_REAL_NAME vCreatorName, b.V_NAME vAreaDesc
+		from sys_province a
+		left join sys_user u on a.N_CREATOR = u.ID
+		left join sys_area b on a.V_AREA_CODE = b.V_CODE
+		where a.V_PRO_CODE = #{value}
+	</select>
+</mapper>

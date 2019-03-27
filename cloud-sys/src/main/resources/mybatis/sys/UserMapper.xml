@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.UserDao">
+
+
+    <!-- 执行存储过程2-->
+    <!-- 入参定义：使用parameterMap进行参数映射，这时候存储过程参数占位符为：? -->
+    <!-- 注意：调用存储过程的两个大括号和中间的内容不要换行！可能会出问题的。正确姿势：{CALL xxx(?,?...)} -->
+    <parameterMap type="java.util.Map" id="exeP_APP_Login_param">
+        <parameter property="user_account" mode="IN" jdbcType="VARCHAR" />
+        <parameter property="user_password" mode="IN" jdbcType="VARCHAR" />
+        <parameter property="prm_code" mode="OUT" jdbcType="VARCHAR" />
+        <parameter property="prm_message" mode="OUT" jdbcType="VARCHAR" />
+    </parameterMap>
+    <select id="exeP_APP_Login" statementType="CALLABLE" parameterMap="exeP_APP_Login_param" resultType="com.dms.bootapp.domain.sys.UserDO">
+	{CALL P_APP_Login(?,?,?,?)}
+	</select>
+
+    <select id="list" resultType="com.dms.bootapp.domain.sys.UserDO" >
+        select `ID`,`V_ACCOUNT`,`V_MOBILE`,`V_PASSWORD`,`V_SALT`,`V_REAL_NAME`,`V_NICK_NAME`,`N_AGE`,`V_MAIL`,`V_REGIST_WAY`,`V_STATUS`,`V_CITY`,`D_CREATE`,`N_CREATOR`,`D_UPDATE`,`V_STOP_FLAG`,`D_STOP`,`N_STOP`,`V_CLIENT_ID`
+        from sys_user limit ${page},${limit};
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        select count(*)
+        from sys_user ;
+    </select>
+
+
+    <delete id="remove">
+        delete from sys_user where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.dms.bootapp.domain.sys.UserDO">
+        update sys_user
+        <set>
+            <if test="vAccount != null">`V_ACCOUNT` = #{vAccount}, </if>
+            <if test="vMobile != null">`V_MOBILE` = #{vMobile}, </if>
+            <if test="vPassword != null and vPassword!='' ">`V_PASSWORD` = #{vPassword}, </if>
+            <if test="vSalt != null">`V_SALT` = #{vSalt}, </if>
+            <if test="vRealName != null">`V_REAL_NAME` = #{vRealName}, </if>
+            <if test="vNickName != null">`V_NICK_NAME` = #{vNickName}, </if>
+            <if test="nAge != null">`N_AGE` = #{nAge}, </if>
+            <if test="vMail != null">`V_MAIL` = #{vMail}, </if>
+            <if test="vRegistWay != null">`V_REGIST_WAY` = #{vRegistWay}, </if>
+            <if test="vStatus != null">`V_STATUS` = #{vStatus}, </if>
+            <if test="vCity != null">`V_CITY` = #{vCity}, </if>
+            <if test="dCreate != null">`D_CREATE` = #{dCreate}, </if>
+            <if test="nCreator != null">`N_CREATOR` = #{nCreator}, </if>
+            <if test="dUpdate != null">`D_UPDATE` = #{dUpdate}, </if>
+            <if test="vStopFlag != null">`V_STOP_FLAG` = #{vStopFlag}, </if>
+            <choose>
+                <when test="nStop == 1">
+                    `D_STOP` = now(),
+                </when>
+                <otherwise>
+                    `D_STOP` = null,
+                </otherwise>
+            </choose>
+            <if test="nStop != null">`N_STOP` = #{nStop}, </if>
+            <if test="vClientId != null">`V_CLIENT_ID` = #{vClientId}</if>
+            <if test="vPORTRAITPATH != null">`V_PORTRAIT_PATH` = #{vPORTRAITPATH}</if>
+        </set>
+        where ID = #{id}
+    </update>
+
+    <select id="get" resultType="com.dms.bootapp.domain.sys.UserDO">
+        select *from sys_user where id=#{id}
+    </select>
+
+
+    <insert id="save" parameterType="com.dms.bootapp.domain.sys.UserDO">
+        insert into sys_user
+        (
+        `V_ACCOUNT`,
+        `V_MOBILE`,
+        `V_PASSWORD`,
+        `V_SALT`,
+        `V_REAL_NAME`,
+        `V_NICK_NAME`,
+        `N_AGE`,
+        `V_MAIL`,
+        `V_REGIST_WAY`,
+        `V_STATUS`,
+        `V_CITY`,
+        `V_STOP_FLAG`,
+        `D_STOP`,
+        `N_STOP`
+        )
+        values
+        (
+        #{vAccount},
+        #{vMobile},
+        #{vPassword},
+        #{vSalt},
+        #{vRealName},
+        #{vNickName},
+        #{nAge},
+        #{vMail},
+        #{vRegistWay},
+        #{vStatus},
+        #{vCity},
+        #{vStopFlag},
+        <choose>
+            <when test="nStop == 1">
+                now(),
+            </when>
+            <otherwise>
+                 null,
+            </otherwise>
+        </choose>
+        #{nStop}
+        )
+    </insert>
+    <select id="getUserRoleAll" resultType="java.util.HashMap">
+    SELECT a.ID ,	a.V_DESC, CASE WHEN a.id IN (	SELECT z.roleid	FROM sys_user_role z	WHERE	z.userid = #{value} )
+    THEN 1	ELSE	0	END AS checked	FROM	sys_role a	LEFT JOIN sys_user_role b ON a.ID = b.roleid AND b.userid = 1
+
+    </select>
+
+    
+</mapper>

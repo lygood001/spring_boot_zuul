@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.MenuDao">
+	<select id="getAppMenuListByGroup" resultType="com.dms.bootapp.domain.sys.MenuDO">
+		select
+			a.`ID`,a.`V_MENU_TYPE`,a.`V_MENU_GROUP`,a.`V_MENU_CODE`,a.`V_MENU_DESC`,a.`V_FROM`,
+			a.`V_MENU_URL`,a.`N_PARENT_ID`,a.`N_CREATOR`,a.`V_INSTRUCTION`,a.`D_CREATE`,
+			a.`D_UPDATE`,a.`V_STOP_FLAG`,a.`D_STOP`,a.`N_STOP`,b.V_FILE_URL vIconUrl
+		from sys_menu  a
+		left join sys_attachment b on a.ID = b.N_BIZ_ID and b.V_BIZ_TABLE = 'sys_menu' and b.V_FILE_TYPE='MENUICON'
+		where a.V_MENU_GROUP = #{value} and a.V_MENU_TYPE = 'APP'
+	</select>
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.MenuDO" parameterType="java.lang.String">
+		select a.`ID`,a.`V_MENU_TYPE`,d.`V_DESC` vMenuTypeName,a.`V_MENU_GROUP`,b.`V_DESC` vMenuGroupDesc,c.`V_FILE_URL` vFileUrl, a.`V_MENU_CODE`,a.`V_MENU_DESC`,a.`V_FROM`,a.`V_MENU_URL`,
+			   a.`N_PARENT_ID`,a.`N_CREATOR`,a.`V_INSTRUCTION`,a.`V_CSS_CODE`,a.`D_CREATE`,a.`D_UPDATE`,a.`V_STOP_FLAG`,a.`D_STOP`,
+			   a.`N_STOP`,CASE
+WHEN e.id is NULL THEN
+	'false'
+ELSE
+	'true'
+end "LAY_CHECKED"
+		from sys_menu a
+		left join sys_dict b  on a.V_MENU_GROUP = b.V_CODE and b.V_MAIN_CODE = 'menu_group'
+		left join sys_dict d  on a.V_MENU_TYPE = d.V_CODE and d.V_MAIN_CODE = 'menu_type'
+		left join sys_attachment c on a.`ID` = c.`N_BIZ_ID` and c.V_BIZ_TABLE='sys_menu'
+		left join sys_role_menu e on a.id = e.menuid and e.rolemenutype = 'APP'
+		where a.V_MENU_TYPE = 'APP'
+		order by a.V_MENU_GROUP,a.V_MENU_CODE
+	    limit ${page},${limits};
+	</select>
+
+	<select id="getAppMenuByMenuCode" resultType="com.dms.bootapp.domain.sys.MenuDO" >
+		SELECT
+			a.`ID`,
+			a.`V_MENU_TYPE`,
+			a.`V_MENU_GROUP`,
+			a.`V_MENU_CODE`,
+			a.`V_MENU_DESC`,
+			a.`V_CSS_CODE`,
+			a.`V_FROM`,
+			a.`V_MENU_URL`,
+			a.`N_PARENT_ID`,
+			a.`N_CREATOR`,
+			a.`V_INSTRUCTION`,
+			a.`D_CREATE`,
+			a.`D_UPDATE`,
+			a.`V_STOP_FLAG`,
+			a.`D_STOP`,
+			a.`N_STOP`,
+			b.`V_FILE_URL` vFileUrl
+		FROM
+			sys_menu a left join sys_attachment b
+			on a.`ID` = b.`N_BIZ_ID` and b.`V_FILE_TYPE` = 'MENUICON'
+		WHERE a.V_MENU_CODE = #{value}
+		order by b.`ID` desc
+		limit 1;
+	</select>
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.MenuDO" useGeneratedKeys="true" keyProperty="id" keyColumn="ID"
+	>
+		insert into sys_menu
+		(
+			`V_MENU_TYPE`,
+			`V_MENU_GROUP`,
+			`V_MENU_CODE`,
+		    `V_CSS_CODE`,
+			`V_MENU_DESC`,
+			`V_FROM`,
+			`V_MENU_URL`,
+			`N_PARENT_ID`,
+			`N_CREATOR`,
+			`V_INSTRUCTION`,
+			`D_CREATE`,
+			`D_UPDATE`,
+			`V_STOP_FLAG`,
+			`D_STOP`,
+			`N_STOP`
+		)
+		values
+		(
+			#{vMenuType},
+			#{vMenuGroup},
+			#{vMenuCode},
+			#{vCssCode},
+			#{vMenuDesc},
+			#{vFrom},
+			#{vMenuUrl},
+			#{nParentId},
+			#{nCreator},
+			#{vInstruction},
+			now(),
+			now(),
+			#{vStopFlag},
+			<choose>
+				<when test="vStopFlag == 1">
+					now(),
+				</when>
+				<otherwise>
+					null,
+				</otherwise>
+			</choose>
+			#{nStop}
+		)
+	</insert>
+
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.MenuDO">
+		update sys_menu
+		<set>
+			<if test="vMenuType != null">`V_MENU_TYPE` = #{vMenuType}, </if>
+			<if test="vMenuGroup != null">`V_MENU_GROUP` = #{vMenuGroup}, </if>
+			<if test="vMenuCode != null">`V_MENU_CODE` = #{vMenuCode}, </if>
+			<if test="vMenuDesc != null">`V_MENU_DESC` = #{vMenuDesc}, </if>
+			<if test="vFrom != null">`V_FROM` = #{vFrom}, </if>
+			<if test="vMenuUrl != null">`V_MENU_URL` = #{vMenuUrl}, </if>
+			<if test="nParentId != null">`N_PARENT_ID` = #{nParentId}, </if>
+			<if test="nCreator != null">`N_CREATOR` = #{nCreator}, </if>
+			<if test="vInstruction != null">`V_INSTRUCTION` = #{vInstruction}, </if>
+			<if test="dCreate != null">`D_CREATE` = #{dCreate}, </if>
+ 			`D_UPDATE` = now(),
+			<if test="vStopFlag != null">`V_STOP_FLAG` = #{vStopFlag}, </if>
+			<choose>
+				<when test="vStopFlag == 1">
+					`D_STOP` = now(),
+				</when>
+				<otherwise>
+					`D_STOP` = null,
+				</otherwise>
+			</choose>
+			<if test="nStop != null">`N_STOP` = #{nStop}</if>
+		</set>
+		where ID = #{id}
+	</update>
+
+	<delete id="remove">
+		delete from sys_menu where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_menu where  V_MENU_TYPE = 'APP'
+	</select>
+
+	<select id="countById" resultType="java.lang.Integer">
+		select count(*) from sys_menu where V_MENU_CODE = #{value}
+	</select>
+	<!-- get PC menu for role-->
+	<select id="getPCMenuTree" resultType="java.util.HashMap">
+SELECT	a.`ID` AS value	,a.`N_PARENT_ID` AS pid,a.`V_MENU_DESC` AS title,
+case when b.id is null then false  else true end as checked
+FROM sys_menu a
+LEFT JOIN sys_role_menu b ON a.ID = b.menuid  and b.roleid = #{value}
+WHERE a.V_MENU_TYPE = 'PC'
+ and a.V_STOP_FLAG = 0
+order by a.`ID`;
+	</select>
+	<!-- get PC menu for all-->
+	<select id="getAllPCMenuTree" resultType="java.util.HashMap">
+		SELECT	a.`ID` AS value	, 	a.`N_PARENT_ID` AS pid,	a.`V_MENU_DESC` AS name ,true as spread , a.V_MENU_CODE as vMenuCode
+, a.D_STOP dStop , a.D_CREATE as dCreate , c.V_REAL_NAME as vRealName , a.V_STOP_FLAG as vStopFlag,a.V_MENU_URL as vMenuUrl
+FROM	sys_menu a
+LEFT JOIN sys_role_menu b ON a.ID = b.menuid
+LEFT JOIN sys_user c on a.N_CREATOR = c.ID
+WHERE a.V_MENU_TYPE = 'PC'
+ GROUP BY a.`ID`  order by a.`ID`;
+	</select>
+	<select id="getPCMenuTreeForUser" resultType="java.util.HashMap">
+	SELECT	a.`ID` AS value	, 	a.`N_PARENT_ID` AS pid,	a.`V_MENU_DESC` AS title,a.V_MENU_URL as vMenuUrl
+	FROM	sys_menu a
+	INNER JOIN sys_role_menu b ON a.ID = b.menuid
+	INNER JOIN sys_user_role c ON b.roleid = c.roleid
+	WHERE a.V_MENU_TYPE = 'PC'
+	and a.V_STOP_FLAG = 0 and c.userid = #{value} GROUP BY a.`ID`  order by a.`ID`;
+	</select>
+	<select id="countAttById" resultType="java.lang.Integer">
+		select count(*) from sys_attachment where N_BIZ_ID = #{value}
+	</select>
+
+	<select id="autoIncrement" resultType="java.lang.String">
+		SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA. TABLES WHERE TABLE_SCHEMA='bootapp' and TABLE_NAME = #{value}
+	</select>
+	<select id="getPCMenuType" resultType="java.lang.String">
+		select V_DESC from sys_dict a WHERE a.V_STOP_FLAG = 0 AND a.V_CODE = 'PC'
+	</select>
+	<select id="getPCMenuGroup" resultType="java.util.HashMap">
+	SELECT	a.ID,	a.V_MENU_DESC as vMenuDesc FROM	sys_menu a INNER JOIN   sys_dict b
+	ON a.V_MENU_TYPE = b.V_CODE AND b.V_CODE = 'PC' WHERE	a.V_STOP_FLAG = '0'
+	AND a.N_PARENT_ID = '0'
+	</select>
+	<select id="countByParentId" resultType="java.lang.Integer">
+		select count(*) from sys_menu where N_PARENT_ID = #{value}
+	</select>
+</mapper>

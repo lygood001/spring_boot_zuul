@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dms.bootapp.dao.sys.AreaDao">
+
+	<select id="getAllAreaList" resultType="com.dms.bootapp.domain.sys.AreaDO" parameterType="java.lang.String">
+		select `ID`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_CODE`,`V_NAME`,`V_REMARK`
+		from sys_area
+	</select>
+
+
+	<select id="list" resultType="com.dms.bootapp.domain.sys.AreaDO" parameterType="java.lang.String">
+		select `ID`,`N_CREATOR`,`D_CREATE`,`D_UPDATE`,`V_CODE`,`V_NAME`,`V_REMARK` from sys_area limit ${page},${limits};
+	</select>
+	
+
+	<insert id="save" parameterType="com.dms.bootapp.domain.sys.AreaDO">
+		insert into sys_area
+		(
+			`ID`, 
+			`N_CREATOR`, 
+			`D_CREATE`, 
+			`D_UPDATE`, 
+			`V_CODE`, 
+			`V_NAME`, 
+			`V_REMARK`
+		)
+		values
+		(
+			#{id}, 
+			#{nCreator}, 
+			#{dCreate}, 
+			#{dUpdate}, 
+			#{vCode}, 
+			#{vName}, 
+			#{vRemark}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.dms.bootapp.domain.sys.AreaDO">
+		update sys_area 
+		<set>
+			<if test="nCreator != null">`N_CREATOR` = #{nCreator}, </if>
+			<if test="dCreate != null">`D_CREATE` = #{dCreate}, </if>
+			<if test="dUpdate != null">`D_UPDATE` = #{dUpdate}, </if>
+			<if test="vCode != null">`V_CODE` = #{vCode}, </if>
+			<if test="vName != null">`V_NAME` = #{vName}, </if>
+			<if test="vRemark != null">`V_REMARK` = #{vRemark}</if>
+		</set>
+		where ID = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_area where id = #{value}
+	</delete>
+
+	<select id="count" resultType="java.lang.Integer">
+		select count(*) from sys_area
+	</select>
+
+
+</mapper>

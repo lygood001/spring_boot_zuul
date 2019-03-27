@@ -1,0 +1,15 @@
+mail:
+  smtp:
+    port: 465
+    auth: true
+    timeout: 5000
+  auth:
+    password:
+    name: xx@163.com
+  host: smtp.163.com
+  is:
+    ssl: true
+  transport:
+    protocol: smtp
+  send:
+    charset: UTF-8
